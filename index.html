@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Sister's Day ❤️</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<!-- ===========================================================
+                    BACKGROUND EFFECTS
+============================================================ -->
+
+<div id="floating-hearts"></div>
+
+<div id="petals"></div>
+
+<div id="sparkles"></div>
+
+
+
+<!-- ===========================================================
+                    PAGE 0
+============================================================ -->
+
+<section id="page0"
+         class="page active">
+
+    <div class="glass-card intro-card">
+
+        <h2 class="small-title">
+            ❤️
+        </h2>
+
+        <h1 class="main-title">
+            A Little Surprise
+            <br>
+            Awaits You
+        </h1>
+
+        <input
+            id="passwordInput"
+            type="password"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder=""
+        >
+
+        <button id="continueBtn">
+            Continue ❤️
+        </button>
+
+        <p id="errorMessage"></p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================================
+                    PAGE 1
+============================================================ -->
+
+<section id="page1"
+         class="page">
+
+    <div class="glass-card">
+
+        <h1 id="welcomeTitle">
+            Happy Sister's Day ❤️
+        </h1>
+
+        <p id="welcomeSubtitle">
+
+        </p>
+
+        <button class="nextBtn">
+            Continue
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================================
+                    PAGE 2
+============================================================ -->
+
+<section id="page2"
+         class="page">
+
+    <div class="glass-card envelope-page">
+
+        <h2>
+
+            💌
+
+        </h2>
+
+        <div id="envelope">
+
+            <div class="cover"></div>
+
+            <div class="letter">
+
+                Tap to Open
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================================
+                    PAGE 3
+============================================================ -->
+
+<section id="page3"
+         class="page">
+
+    <div class="glass-card letter-card">
+
+        <h2>
+
+            ❤️
+
+        </h2>
+
+        <div id="letterText">
+
+        </div>
+
+        <button class="nextBtn">
+
+            Our Beautiful Memories →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================================
+                    PAGE 4
+============================================================ -->
+
+<section id="page4"
+         class="page">
+
+    <div class="glass-card">
+
+        <h1>
+
+            📷
+            <br>
+            Our Beautiful Memories
+
+        </h1>
+
+        <div class="gallery">
+
+            <img id="photo1">
+
+            <img id="photo2">
+
+            <img id="photo3">
+
+            <img id="photo4">
+
+            <img id="photo5">
+
+        </div>
+
+        <button class="nextBtn">
+
+            Continue ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================================
+                    PAGE 5
+============================================================ -->
+
+<section id="page5"
+         class="page">
+
+    <div class="glass-card">
+
+        <h1>
+
+            🌸
+            <br>
+            Why You're So Special
+
+        </h1>
+
+        <div id="cardsContainer">
+
+        </div>
+
+        <button class="nextBtn">
+
+            Continue ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================================
+                    PAGE 6
+============================================================ -->
+
+<section id="page6"
+         class="page">
+
+    <div class="glass-card">
+
+        <h1>
+
+            ❤️ Hidden Messages ❤️
+
+        </h1>
+
+        <div id="heartContainer">
+
+        </div>
+
+        <button class="nextBtn">
+
+            One Last Thing →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================================
+                    PAGE 7
+============================================================ -->
+
+<section id="page7"
+         class="page">
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <div class="glass-card final-card">
+
+        <h1>
+
+            Happy Sister's Day ❤️
+
+        </h1>
+
+        <div id="finalLetter">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================================================
+                AUDIO
+============================================================ -->
+
+<audio id="bgMusic"
+       loop>
+
+</audio>
+
+
+
+<!-- ===========================================================
+                JAVASCRIPT
+============================================================ -->
+
+<script src="sisters-data.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

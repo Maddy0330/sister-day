@@ -1,0 +1,1663 @@
+/*==========================================================
+                    GOOGLE FONT
+==========================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*==========================================================
+                    ROOT VARIABLES
+==========================================================*/
+
+:root{
+
+    --pink1:#ffd9e8;
+    --pink2:#ffc3d9;
+    --pink3:#ff8fb7;
+    --pink4:#ff5f9a;
+
+    --white:rgba(255,255,255,.85);
+
+    --glass:rgba(255,255,255,.20);
+
+    --border:rgba(255,255,255,.45);
+
+    --shadow:0 18px 45px rgba(0,0,0,.15);
+
+    --transition:.6s;
+
+}
+
+
+/*==========================================================
+                    RESET
+==========================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
+
+    height:100vh;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ffd9e8,
+    #ffc7df,
+    #ffb8d6,
+    #ff9fc5,
+    #ff8fb7);
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s ease infinite;
+
+}
+
+
+/*==========================================================
+                    BACKGROUND ANIMATION
+==========================================================*/
+
+@keyframes bgMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+
+
+/*==========================================================
+                    PAGE
+==========================================================*/
+
+.page{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+opacity:0;
+
+visibility:hidden;
+
+transform:translateY(30px);
+
+transition:all .8s ease;
+
+padding:20px;
+
+}
+
+.page.active{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateY(0px);
+
+}
+
+
+
+/*==========================================================
+                    GLASS CARD
+==========================================================*/
+
+.glass-card{
+
+width:min(430px,95vw);
+
+padding:35px;
+
+border-radius:30px;
+
+background:var(--glass);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+text-align:center;
+
+animation:cardFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes cardFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+
+
+/*==========================================================
+                    TITLES
+==========================================================*/
+
+.main-title{
+
+font-family:'Great Vibes',cursive;
+
+font-size:3rem;
+
+line-height:1.3;
+
+margin-bottom:35px;
+
+color:white;
+
+text-shadow:
+
+0 5px 15px rgba(0,0,0,.18);
+
+}
+
+.small-title{
+
+font-size:55px;
+
+margin-bottom:15px;
+
+}
+
+h1{
+
+font-weight:600;
+
+line-height:1.4;
+
+margin-bottom:20px;
+
+}
+
+h2{
+
+margin-bottom:20px;
+
+font-size:2rem;
+
+}
+
+p{
+
+line-height:1.8;
+
+font-size:17px;
+
+}
+
+
+
+/*==========================================================
+                    PASSWORD INPUT
+==========================================================*/
+
+input{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+outline:none;
+
+border-radius:18px;
+
+font-size:17px;
+
+margin-top:15px;
+
+margin-bottom:25px;
+
+background:rgba(255,255,255,.82);
+
+color:#555;
+
+transition:.4s;
+
+}
+
+input:focus{
+
+transform:scale(1.03);
+
+box-shadow:
+
+0 10px 25px rgba(255,105,180,.35);
+
+}
+
+input::placeholder{
+
+color:#999;
+
+}
+
+
+
+/*==========================================================
+                    BUTTON
+==========================================================*/
+
+button{
+
+border:none;
+
+cursor:pointer;
+
+padding:16px 35px;
+
+border-radius:50px;
+
+font-size:17px;
+
+font-weight:600;
+
+color:white;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#ff5f9a,
+
+#ff79b0
+
+);
+
+transition:.35s;
+
+box-shadow:
+
+0 12px 25px rgba(255,80,140,.35);
+
+}
+
+button:hover{
+
+transform:
+
+translateY(-4px)
+
+scale(1.05);
+
+box-shadow:
+
+0 18px 35px rgba(255,80,140,.45);
+
+}
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+
+
+/*==========================================================
+                    ERROR MESSAGE
+==========================================================*/
+
+#errorMessage{
+
+height:22px;
+
+font-size:15px;
+
+color:#fff;
+
+margin-top:15px;
+
+opacity:.95;
+
+}
+
+
+
+/*==========================================================
+                    FLOATING HEARTS
+==========================================================*/
+
+#floating-hearts{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.heart{
+
+position:absolute;
+
+bottom:-60px;
+
+font-size:25px;
+
+opacity:.5;
+
+animation:heartFloat linear infinite;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:
+
+translateY(0)
+
+rotate(0deg);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:.7;
+
+}
+
+100%{
+
+transform:
+
+translateY(-120vh)
+
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+/*==========================================================
+                    PETALS
+==========================================================*/
+
+#petals{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+.petal{
+
+position:absolute;
+
+top:-50px;
+
+font-size:18px;
+
+animation:petalFall linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:
+
+translateY(0)
+
+rotate(0deg);
+
+}
+
+100%{
+
+transform:
+
+translateY(120vh)
+
+rotate(720deg);
+
+}
+
+}
+
+
+
+/*==========================================================
+                    SPARKLES
+==========================================================*/
+
+#sparkles{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+top:0;
+
+left:0;
+
+pointer-events:none;
+
+z-index:-3;
+
+}
+
+.sparkle{
+
+position:absolute;
+
+width:6px;
+
+height:6px;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.7;
+
+animation:twinkle 2.5s infinite;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.2;
+
+transform:scale(.5);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.6);
+
+}
+
+}
+
+
+
+/*==========================================================
+                    INTRO PAGE
+==========================================================*/
+
+.intro-card{
+
+animation:
+
+fadeIn .8s ease,
+
+cardFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/*==========================================================
+                    NEXT BUTTON
+==========================================================*/
+
+.nextBtn{
+
+margin-top:30px;
+
+}
+
+
+/*==========================================================
+                    ENVELOPE PAGE
+==========================================================*/
+
+.envelope-page{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+#envelope{
+
+    position:relative;
+
+    width:280px;
+    height:190px;
+
+    margin:25px auto;
+
+    cursor:pointer;
+
+    transition:.6s;
+
+}
+
+#envelope:hover{
+
+    transform:scale(1.03);
+
+}
+
+.cover{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+    135deg,
+    #ff7aac,
+    #ff5f9a);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.20);
+
+}
+
+.cover::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:white;
+
+    clip-path:polygon(
+    0 0,
+    50% 55%,
+    100% 0,
+    100% 100%,
+    0 100%);
+
+}
+
+.cover::after{
+
+    content:"❤️";
+
+    position:absolute;
+
+    font-size:34px;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+}
+
+.letter{
+
+    position:absolute;
+
+    left:10%;
+
+    width:80%;
+
+    height:150px;
+
+    background:white;
+
+    color:#ff5f9a;
+
+    border-radius:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:600;
+
+    transition:.8s;
+
+    bottom:15px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.15);
+
+}
+
+#envelope.open .letter{
+
+    transform:translateY(-120px);
+
+}
+
+#envelope.open{
+
+    transform:scale(1.05);
+
+}
+
+
+/*==========================================================
+                    LETTER PAGE
+==========================================================*/
+
+.letter-card{
+
+    max-height:82vh;
+
+}
+
+#letterText{
+
+    min-height:300px;
+
+    text-align:left;
+
+    font-size:17px;
+
+    line-height:2;
+
+    white-space:pre-wrap;
+
+    color:white;
+
+    overflow-y:auto;
+
+    padding-right:10px;
+
+}
+
+#letterText::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+#letterText::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.45);
+
+    border-radius:20px;
+
+}
+
+.typeCursor{
+
+    display:inline-block;
+
+    width:2px;
+
+    background:white;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:0;
+
+}
+
+}
+
+
+/*==========================================================
+                    GALLERY
+==========================================================*/
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:14px;
+
+    margin-top:25px;
+
+}
+
+.gallery img{
+
+    width:100%;
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    border:3px solid rgba(255,255,255,.55);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.18);
+
+    opacity:0;
+
+    transform:scale(.8);
+
+    transition:
+    opacity .8s,
+    transform .8s;
+
+}
+
+.gallery img.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.06);
+
+}
+
+.gallery img:last-child{
+
+    grid-column:span 2;
+
+    width:65%;
+
+    margin:auto;
+
+}
+
+
+/*==========================================================
+                    IMAGE POPUP
+==========================================================*/
+
+.imageViewer{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+    animation:fadeIn .4s;
+
+}
+
+.imageViewer img{
+
+    width:90%;
+
+    max-width:450px;
+
+    border-radius:20px;
+
+    border:4px solid white;
+
+}
+
+
+/*==========================================================
+                    PAGE HEADINGS
+==========================================================*/
+
+.page h1{
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
+}
+
+.page h2{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.page p{
+
+    font-size:16px;
+
+}
+
+
+/*==========================================================
+                    HIDDEN MESSAGE SECTION
+==========================================================*/
+
+#heartContainer{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:22px;
+
+    margin-top:30px;
+
+}
+
+.secretHeart{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    background:
+
+    rgba(255,255,255,.18);
+
+    backdrop-filter:blur(8px);
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.secretHeart:hover{
+
+    transform:
+
+    scale(1.12)
+
+    rotate(8deg);
+
+}
+
+.secretHeart.open{
+
+    animation:popHeart .5s;
+
+}
+
+@keyframes popHeart{
+
+0%{
+
+transform:scale(.4);
+
+}
+
+60%{
+
+transform:scale(1.25);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+
+/*==========================================================
+                    MESSAGE POPUP
+==========================================================*/
+
+.messagePopup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.60);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:1000;
+
+    animation:fadeIn .35s;
+
+}
+
+.messageCard{
+
+    width:min(350px,88vw);
+
+    padding:28px;
+
+    border-radius:25px;
+
+    background:white;
+
+    color:#ff5f9a;
+
+    text-align:center;
+
+    font-weight:500;
+
+    line-height:1.9;
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.25);
+
+}
+
+
+/*==========================================================
+                    WHY YOU'RE SO SPECIAL
+==========================================================*/
+
+#cardsContainer{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+margin-top:25px;
+
+}
+
+.specialCard{
+
+position:relative;
+
+height:110px;
+
+cursor:pointer;
+
+perspective:1000px;
+
+}
+
+.cardInner{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+transition:transform .8s;
+
+transform-style:preserve-3d;
+
+}
+
+.specialCard.flip .cardInner{
+
+transform:rotateY(180deg);
+
+}
+
+.cardFront,
+.cardBack{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+border-radius:20px;
+
+backface-visibility:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+text-align:center;
+
+box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+}
+
+.cardFront{
+
+background:rgba(255,255,255,.20);
+
+backdrop-filter:blur(12px);
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+.cardBack{
+
+background:white;
+
+color:#ff5f9a;
+
+transform:rotateY(180deg);
+
+font-size:16px;
+
+line-height:1.7;
+
+}
+
+
+/*==========================================================
+                    FINAL PAGE
+==========================================================*/
+
+.final-card{
+
+position:relative;
+
+z-index:5;
+
+}
+
+#finalLetter{
+
+margin-top:20px;
+
+line-height:2;
+
+font-size:18px;
+
+white-space:pre-wrap;
+
+min-height:220px;
+
+}
+
+#confettiCanvas{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+
+/*==========================================================
+                    FLOATING ANIMATIONS
+==========================================================*/
+
+.floatUp{
+
+animation:floatUp .8s forwards;
+
+}
+
+@keyframes floatUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.zoomIn{
+
+animation:zoomIn .6s forwards;
+
+}
+
+@keyframes zoomIn{
+
+from{
+
+opacity:0;
+
+transform:scale(.6);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+.fadeOut{
+
+animation:fadeOut .5s forwards;
+
+}
+
+@keyframes fadeOut{
+
+to{
+
+opacity:0;
+
+}
+
+}
+
+.slideLeft{
+
+animation:slideLeft .7s forwards;
+
+}
+
+@keyframes slideLeft{
+
+from{
+
+opacity:0;
+
+transform:translateX(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+
+/*==========================================================
+                    BUTTON RIPPLE
+==========================================================*/
+
+button{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+button::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+width:0;
+
+height:0;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.4);
+
+transform:translate(-50%,-50%);
+
+transition:.5s;
+
+}
+
+button:active::after{
+
+width:350px;
+
+height:350px;
+
+opacity:0;
+
+}
+
+
+/*==========================================================
+                    PHOTO EFFECT
+==========================================================*/
+
+.gallery img{
+
+cursor:pointer;
+
+}
+
+.gallery img:active{
+
+transform:scale(.95);
+
+}
+
+
+/*==========================================================
+                    HEART GLOW
+==========================================================*/
+
+.secretHeart{
+
+animation:heartGlow 2s infinite;
+
+}
+
+@keyframes heartGlow{
+
+0%,100%{
+
+box-shadow:0 0 0 rgba(255,255,255,0);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 25px rgba(255,255,255,.6);
+
+}
+
+}
+
+
+/*==========================================================
+                    ENVELOPE PULSE
+==========================================================*/
+
+#envelope{
+
+animation:pulseEnvelope 2.5s infinite;
+
+}
+
+@keyframes pulseEnvelope{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.03);
+
+}
+
+}
+
+
+/*==========================================================
+                    CUSTOM SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:rgba(255,255,255,.12);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:rgba(255,255,255,.45);
+
+border-radius:20px;
+
+}
+
+
+/*==========================================================
+                    MOBILE RESPONSIVE
+==========================================================*/
+
+@media(max-width:480px){
+
+.glass-card{
+
+padding:28px 22px;
+
+border-radius:24px;
+
+width:95vw;
+
+}
+
+.main-title{
+
+font-size:2.4rem;
+
+}
+
+.page h1{
+
+font-size:1.7rem;
+
+}
+
+.page h2{
+
+font-size:1.8rem;
+
+}
+
+input{
+
+padding:16px;
+
+font-size:16px;
+
+}
+
+button{
+
+padding:15px 28px;
+
+font-size:16px;
+
+}
+
+.gallery{
+
+gap:10px;
+
+}
+
+.secretHeart{
+
+width:60px;
+
+height:60px;
+
+font-size:28px;
+
+}
+
+#letterText{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+#finalLetter{
+
+font-size:17px;
+
+}
+
+}
+
+
+/*==========================================================
+                    SMALL PHONES
+==========================================================*/
+
+@media(max-width:360px){
+
+.main-title{
+
+font-size:2rem;
+
+}
+
+.glass-card{
+
+padding:22px 18px;
+
+}
+
+.page h1{
+
+font-size:1.5rem;
+
+}
+
+.page h2{
+
+font-size:1.6rem;
+
+}
+
+button{
+
+font-size:15px;
+
+padding:14px 24px;
+
+}
+
+.secretHeart{
+
+width:55px;
+
+height:55px;
+
+font-size:24px;
+
+}
+
+}
+
+
+/*==========================================================
+                    LANDSCAPE WARNING
+==========================================================*/
+
+@media (orientation:landscape){
+
+.page::before{
+
+content:"📱 Please rotate your phone";
+
+position:absolute;
+
+inset:0;
+
+background:#ff8fb7;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:24px;
+
+font-weight:600;
+
+z-index:9999;
+
+color:white;
+
+}
+
+}
+
+
+/*==========================================================
+                    THE END ❤️
+==========================================================*/
