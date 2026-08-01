@@ -124,11 +124,25 @@ opacity:0;
 
 visibility:hidden;
 
-transform:translateY(30px);
+transform:translateY(40px) scale(.97);
 
-transition:all .8s ease;
+filter:blur(8px);
+
+transition:
+
+opacity .75s ease,
+
+transform .75s cubic-bezier(.22,1,.36,1),
+
+filter .75s ease,
+
+visibility .75s;
 
 padding:20px;
+
+will-change:transform,opacity;
+
+backface-visibility:hidden;
 
 }
 
@@ -138,7 +152,9 @@ opacity:1;
 
 visibility:visible;
 
-transform:translateY(0px);
+transform:translateY(0) scale(1);
+
+filter:blur(0);
 
 }
 
