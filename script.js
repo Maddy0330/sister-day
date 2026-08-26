@@ -397,8 +397,20 @@ function openEnvelope() {
     // Wait for the animation to finish
     setTimeout(function () {
 
-        currentPage = 3;
         transitionToPage(3);
+    
+        letterTyped = true;
+    
+        const letterTextDiv = document.getElementById("letterText");
+    
+        typewriterEffect(
+            letterTextDiv,
+            window.mainLetterContent,
+            25,
+            function () {
+                isTransitioning = false;
+            }
+        );
 
     }, 900);
 
