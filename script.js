@@ -385,11 +385,23 @@ function openEnvelope() {
   }
   
   setTimeout(function() {
+
     if (letter) {
-      letter.style.transform = "translateY(-100px)";
-      letter.style.transition = "transform 0.8s ease";
-      letter.textContent = "Tap to Read ❤️";
+
+        letter.style.transform = "translateY(-100px)";
+        letter.style.transition = "transform 0.8s ease";
+        letter.textContent = "💌 Opening your letter...";
+
     }
+
+    // Wait for the animation to finish
+    setTimeout(function () {
+
+        currentPage = 3;
+        transitionToPage(3);
+
+    }, 900);
+
   }, 400);
 }
 
