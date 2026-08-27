@@ -19,7 +19,9 @@ const SISTERS_DATA = {
       "assets/photos/001-2.jpg",
       "assets/photos/001-3.jpg",
       "assets/photos/001-4.jpg",
-      "assets/photos/001-5.jpg"
+      "assets/photos/001-5.jpg",
+      "assets/photos/001-6.jpg",
+      "assets/photos/001-7.jpg"
     ],
     mainLetter: `Mamma Jaanu ❤️🤍 
 
@@ -81,8 +83,7 @@ P.S. - You'll always be the most special person in my life. 💕`
       "assets/photos/002-1.jpg",
       "assets/photos/002-2.jpg",
       "assets/photos/002-3.jpg",
-      "assets/photos/002-4.jpg",
-      "assets/photos/002-5.jpg"
+      "assets/photos/002-4.jpg"
     ],
     mainLetter: `Rachu Akka 🥰❤️ 
 
@@ -151,7 +152,9 @@ P.S. - I couldn't have asked for a better sister. 💕`
       "assets/photos/003-2.jpg",
       "assets/photos/003-3.jpg",
       "assets/photos/003-4.jpg",
-      "assets/photos/003-5.jpg"
+      "assets/photos/003-5.jpg",
+      "assets/photos/003-6.jpg",
+      "assets/photos/003-7.jpg"
     ],
     mainLetter: `Kavana Akka 🥰❤️ 
 
@@ -214,9 +217,7 @@ P.S. - The world is better because you're in it. 💕`
     photoFiles: [
       "assets/photos/004-1.jpg",
       "assets/photos/004-2.jpg",
-      "assets/photos/004-3.jpg",
-      "assets/photos/004-4.jpg",
-      "assets/photos/004-5.jpg"
+      "assets/photos/004-3.jpg"
     ],
     mainLetter: `Sushma Akka 🥰❤️ 
 
@@ -283,11 +284,7 @@ P.S. - Thank you for all the love and laughter. 💕`
     welcomeButton: "Shall We Begin, Sudha Akka? ❤️",
     musicFile: "assets/music/005.mp3",
     photoFiles: [
-      "assets/photos/005-1.jpg",
-      "assets/photos/005-2.jpg",
-      "assets/photos/005-3.jpg",
-      "assets/photos/005-4.jpg",
-      "assets/photos/005-5.jpg"
+      "assets/photos/005-1.jpg"
     ],
     mainLetter: `Sudha Akka 🥰❤️ 
 
@@ -357,11 +354,7 @@ P.S. - You are our Creative Head. 💕`
     welcomeButton: "Shall We Begin, Vinutha Akka? ❤️",
     musicFile: "assets/music/006.mp3",
     photoFiles: [
-      "assets/photos/006-1.jpg",
-      "assets/photos/006-2.jpg",
-      "assets/photos/006-3.jpg",
-      "assets/photos/006-4.jpg",
-      "assets/photos/006-5.jpg"
+      "assets/photos/006-1.jpg"
     ],
     galleryCaptions: ["Memory 1", "Memory 2", "Memory 3", "Memory 4", "Memory 5"],
     mainLetter: `Vinutha Akka 🥰❤️
