@@ -15,13 +15,13 @@ const SISTERS_DATA = {
     welcomeButton: "Shall We Begin, Mamma? ❤️",
     musicFile: "assets/music/001.mp3",
     photoFiles: [
-      "assets/photos/001-1.jpg",
-      "assets/photos/001-2.jpg",
-      "assets/photos/001-3.jpg",
-      "assets/photos/001-4.jpg",
-      "assets/photos/001-5.jpg",
-      "assets/photos/001-6.jpg",
-      "assets/photos/001-7.jpg"
+      "assets/photos/001-1.jpeg",
+      "assets/photos/001-2.jpeg",
+      "assets/photos/001-3.jpeg",
+      "assets/photos/001-4.jpeg",
+      "assets/photos/001-5.jpeg",
+      "assets/photos/001-6.jpeg",
+      "assets/photos/001-7.jpeg"
     ],
     mainLetter: `Mamma Jaanu ❤️🤍 
 
@@ -80,10 +80,10 @@ P.S. - You'll always be the most special person in my life. 💕`
     welcomeButton: "Shall We Begin, Rachu Akka? ❤️",
     musicFile: "assets/music/002.mp3",
     photoFiles: [
-      "assets/photos/002-1.jpg",
-      "assets/photos/002-2.jpg",
-      "assets/photos/002-3.jpg",
-      "assets/photos/002-4.jpg"
+      "assets/photos/002-1.jpeg",
+      "assets/photos/002-2.jpeg",
+      "assets/photos/002-3.jpeg",
+      "assets/photos/002-4.jpeg"
     ],
     mainLetter: `Rachu Akka 🥰❤️ 
 
@@ -148,13 +148,13 @@ P.S. - I couldn't have asked for a better sister. 💕`
     welcomeButton: "Shall We Begin, Kavana Akka? ❤️",
     musicFile: "assets/music/003.mp3",
     photoFiles: [
-      "assets/photos/003-1.jpg",
-      "assets/photos/003-2.jpg",
-      "assets/photos/003-3.jpg",
-      "assets/photos/003-4.jpg",
-      "assets/photos/003-5.jpg",
-      "assets/photos/003-6.jpg",
-      "assets/photos/003-7.jpg"
+      "assets/photos/003-1.jpeg",
+      "assets/photos/003-2.jpeg",
+      "assets/photos/003-3.jpeg",
+      "assets/photos/003-4.jpeg",
+      "assets/photos/003-5.jpeg",
+      "assets/photos/003-6.jpeg",
+      "assets/photos/003-7.jpeg"
     ],
     mainLetter: `Kavana Akka 🥰❤️ 
 
@@ -215,9 +215,9 @@ P.S. - The world is better because you're in it. 💕`
     welcomeButton: "Shall We Begin, Sushma Akka? ❤️",
     musicFile: "assets/music/004.mp3",
     photoFiles: [
-      "assets/photos/004-1.jpg",
-      "assets/photos/004-2.jpg",
-      "assets/photos/004-3.jpg"
+      "assets/photos/004-1.jpeg",
+      "assets/photos/004-2.jpeg",
+      "assets/photos/004-3.jpeg"
     ],
     mainLetter: `Sushma Akka 🥰❤️ 
 
@@ -284,7 +284,7 @@ P.S. - Thank you for all the love and laughter. 💕`
     welcomeButton: "Shall We Begin, Sudha Akka? ❤️",
     musicFile: "assets/music/005.mp3",
     photoFiles: [
-      "assets/photos/005-1.jpg"
+      "assets/photos/005-1.jpeg"
     ],
     mainLetter: `Sudha Akka 🥰❤️ 
 
@@ -354,7 +354,7 @@ P.S. - You are our Creative Head. 💕`
     welcomeButton: "Shall We Begin, Vinutha Akka? ❤️",
     musicFile: "assets/music/006.mp3",
     photoFiles: [
-      "assets/photos/006-1.jpg"
+      "assets/photos/006-1.jpeg"
     ],
     galleryCaptions: ["Memory 1", "Memory 2", "Memory 3", "Memory 4", "Memory 5"],
     mainLetter: `Vinutha Akka 🥰❤️
@@ -423,11 +423,11 @@ P.S. - You are a blessing in my life. 💕`
     welcomeButton: "Shall We Begin, Kothi Mariii? ❤️",
     musicFile: "assets/music/007.mp3",
     photoFiles: [
-      "assets/photos/007-1.jpg",
-      "assets/photos/007-2.jpg",
-      "assets/photos/007-3.jpg",
-      "assets/photos/007-4.jpg",
-      "assets/photos/007-5.jpg"
+      "assets/photos/007-1.jpeg",
+      "assets/photos/007-2.jpeg",
+      "assets/photos/007-3.jpeg",
+      "assets/photos/007-4.jpeg",
+      "assets/photos/007-5.jpeg"
     ],
     galleryCaptions: ["Memory 1", "Memory 2", "Memory 3", "Memory 4", "Memory 5"],
     mainLetter: `Hi Baby 😘💓
