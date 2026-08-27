@@ -1035,50 +1035,34 @@ opacity:0;
 ==========================================================*/
 
 #heartContainer{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:22px;
-
-    margin-top:30px;
-
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:20;
 }
 
 .secretHeart{
-
-    width:70px;
-
-    height:70px;
-
-    margin:auto;
-
+    position:absolute;
+    top:-70px;
+    width:58px;
+    height:58px;
+    padding:0 0 4px;
+    border:1px solid rgba(255,255,255,.42);
     border-radius:50%;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    font-size:32px;
-
+    color:#ff5f9a;
+    font-size:var(--heart-size);
+    line-height:1;
     cursor:pointer;
-
-    background:
-
-    rgba(255,255,255,.18);
-
+    pointer-events:auto;
+    background:rgba(255,255,255,.2);
     backdrop-filter:blur(8px);
-
-    transition:.35s;
-
-    box-shadow:
-
-    0 10px 25px rgba(0,0,0,.15);
-
+    box-shadow:0 8px 25px rgba(255,95,154,.2), inset 0 0 15px rgba(255,255,255,.25);
+    animation:fallingHeart var(--heart-duration) linear var(--heart-delay) forwards;
+    will-change:transform;
 }
 
 .secretHeart:hover{
@@ -1089,6 +1073,13 @@ opacity:0;
 
     rotate(8deg);
 
+}
+
+@keyframes fallingHeart{
+    0%{transform:translate3d(0,0,0) rotate(-8deg);opacity:0}
+    10%{opacity:1}
+    50%{transform:translate3d(var(--heart-drift),50vh,0) rotate(8deg)}
+    100%{transform:translate3d(calc(var(--heart-drift) * -0.55),115vh,0) rotate(-8deg);opacity:.15}
 }
 
 .secretHeart.open{
@@ -1166,6 +1157,50 @@ transform:scale(1);
 
     0 20px 40px rgba(0,0,0,.25);
 
+}
+
+.messageCard{
+    position:relative;
+    border:1px solid rgba(255,255,255,.5);
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(18px);
+    color:white;
+    box-shadow:0 20px 50px rgba(0,0,0,.25), inset 0 0 25px rgba(255,255,255,.1);
+    animation:popupRise .45s ease-out;
+}
+
+.messageCard p{margin:0}
+
+.messageHeartIcon{
+    margin:0 auto 14px;
+    color:#ff5f9a;
+    font-size:42px;
+    line-height:1;
+    text-shadow:0 0 18px rgba(255,95,154,.9);
+    animation:heartGlow 1.8s ease-in-out infinite;
+}
+
+.popupClose{
+    position:absolute;
+    top:8px;
+    right:12px;
+    width:34px;
+    height:34px;
+    border:0;
+    background:transparent;
+    color:white;
+    font-size:28px;
+    font-weight:300;
+    cursor:pointer;
+}
+
+@keyframes popupRise{
+    from{transform:translateY(14px) scale(.96);opacity:0}
+    to{transform:translateY(0) scale(1);opacity:1}
+}
+
+@keyframes heartGlow{
+    50%{transform:scale(1.1);text-shadow:0 0 28px rgba(255,95,154,1)}
 }
 
 
@@ -1483,7 +1518,9 @@ transform:scale(.95);
 
 .secretHeart{
 
-animation:heartGlow 2s infinite;
+    animation:
+        fallingHeart var(--heart-duration) linear var(--heart-delay) forwards,
+        heartGlow 2s ease-in-out infinite;
 
 }
 

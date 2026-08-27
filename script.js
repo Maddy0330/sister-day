@@ -10,6 +10,8 @@ let currentSister = null;
 let isTransitioning = false;
 let envelopeOpened = false;
 let letterTyped = false;
+let hiddenMessageIndex = 0;
+let hiddenHeartInterval = null;
 
 // ==================== INITIALIZATION ====================
 document.addEventListener("DOMContentLoaded", function() {
@@ -320,33 +322,77 @@ function loadSpecialCards(cardsData) {
 function loadHiddenMessages(messages) {
   const container = document.getElementById("heartContainer");
   if (!container) return;
-  
+
+  if (hiddenHeartInterval) {
+    clearInterval(hiddenHeartInterval);
+    hiddenHeartInterval = null;
+  }
+
   container.innerHTML = "";
-  
-  messages.forEach(function(message) {
-    const heart = document.createElement("div");
+
+  hiddenMessageIndex = 0;
+
+  function createHiddenHeart() {
+    if (container.children.length >= 12 || !document.getElementById("page6").classList.contains("active")) return;
+
+    const heart = document.createElement("button");
+    heart.type = "button";
     heart.className = "secretHeart";
-    heart.textContent = "❤️";
-    heart.dataset.message = message;
-    
+    heart.textContent = "♥";
+    heart.setAttribute("aria-label", "Reveal a hidden message");
+    heart.dataset.message = messages[hiddenMessageIndex];
+    heart.style.left = (5 + Math.random() * 90) + "%";
+    heart.style.setProperty("--heart-size", (28 + Math.random() * 22) + "px");
+    heart.style.setProperty("--heart-duration", (7 + Math.random() * 5) + "s");
+    heart.style.setProperty("--heart-drift", (-45 + Math.random() * 90) + "px");
+    heart.style.setProperty("--heart-delay", (Math.random() * -4) + "s");
     container.appendChild(heart);
-  });
+    setTimeout(function() { heart.remove(); }, 13000);
+  }
+
+  for (let index = 0; index < 5; index++) createHiddenHeart();
+  hiddenHeartInterval = setInterval(createHiddenHeart, 900);
 }
 
 function openHiddenMessage(heartElement) {
   heartElement.classList.add("open");
-  
-  const message = heartElement.dataset.message;
+  heartElement.disabled = true;
+
+  const messages = SISTERS_DATA[currentSister].hiddenMessages;
+  const message = messages[hiddenMessageIndex];
   
   const popup = document.createElement("div");
   popup.className = "messagePopup";
   
   const card = document.createElement("div");
   card.className = "messageCard";
-  card.textContent = message;
+
+  const icon = document.createElement("div");
+  icon.className = "messageHeartIcon";
+  icon.textContent = "♥";
+
+  const messageText = document.createElement("p");
+  messageText.textContent = message;
+
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "popupClose";
+  closeButton.setAttribute("aria-label", "Close hidden message");
+  closeButton.textContent = "×";
+
+  card.appendChild(closeButton);
+  card.appendChild(icon);
+  card.appendChild(messageText);
   
   popup.appendChild(card);
   document.body.appendChild(popup);
+
+  hiddenMessageIndex = (hiddenMessageIndex + 1) % messages.length;
+
+  closeButton.addEventListener("click", function(e) {
+    e.stopPropagation();
+    closeMessagePopup();
+  });
   
   popup.addEventListener("click", function() {
     popup.style.animation = "fadeOut 0.3s forwards";
@@ -371,9 +417,11 @@ function openEnvelope() {
   if (envelopeOpened) return;
   
   envelopeOpened = true;
+  isTransitioning = true;
   
   const envelope = document.getElementById("envelope");
   if (!envelope) return;
+  envelope.classList.add("open");
   
   const cover = envelope.querySelector(".cover");
   const letter = envelope.querySelector(".letter");
@@ -415,6 +463,16 @@ function openEnvelope() {
     }, 900);
 
   }, 400);
+
+  setTimeout(function() {
+    transitionToPage(3);
+    letterTyped = true;
+    typewriterEffect(
+      document.getElementById("letterText"),
+      window.mainLetterContent,
+      25
+    );
+  }, 1200);
 }
 
 // ==================== TYPEWRITER EFFECT ====================
@@ -453,6 +511,17 @@ function typewriterEffect(element, text, speed, callback) {
 
 // ==================== PAGE TRANSITIONS ====================
 function transitionToPage(pageNum) {
+  const page6 = document.getElementById("page6");
+  if (pageNum !== 6 && (currentPage === 6 || (page6 && page6.classList.contains("active")))) {
+    if (hiddenHeartInterval) {
+      clearInterval(hiddenHeartInterval);
+      hiddenHeartInterval = null;
+    }
+
+    const heartContainer = page6 && page6.querySelector("#heartContainer");
+    if (heartContainer) heartContainer.innerHTML = "";
+  }
+
   const pages = document.querySelectorAll(".page");
   pages.forEach(function(page) {
     page.classList.remove("active");
@@ -461,6 +530,10 @@ function transitionToPage(pageNum) {
   const targetPage = document.getElementById("page" + pageNum);
   if (targetPage) {
     targetPage.classList.add("active");
+
+    if (pageNum === 6 && currentSister) {
+      loadHiddenMessages(SISTERS_DATA[currentSister].hiddenMessages);
+    }
   }
   
   currentPage = pageNum;
@@ -477,16 +550,8 @@ function goToNextPage() {
     transitionToPage(3);
   } else if (currentPage === 3) {
     // Page 3 - Typewriter Letter
-    if (!letterTyped) {
-      letterTyped = true;
-      const letterTextDiv = document.getElementById("letterText");
-      typewriterEffect(letterTextDiv, window.mainLetterContent, 25, function() {
-        isTransitioning = false;
-      });
-    } else {
-      currentPage = 4;
-      transitionToPage(4);
-    }
+    currentPage = 4;
+    transitionToPage(4);
   } else if (currentPage === 7) {
     // Already on last page
     isTransitioning = false;
