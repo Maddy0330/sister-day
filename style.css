@@ -1871,6 +1871,7 @@ color:white;
 
 .welcome-card{
     justify-content:center;
+    align-items:center;
     padding:24px 28px;
 }
 
@@ -1896,8 +1897,42 @@ color:white;
     text-align:center;
 }
 
+.welcome-card > h1,
+.welcome-card > #welcomeName,
+.welcome-card > #welcomeMessage{
+    width:100%;
+    margin-left:0;
+    margin-right:0;
+    text-align:center;
+}
+
+.welcome-card > .nextBtn{
+    margin-left:0;
+    margin-right:0;
+}
+
 .welcome-card > .nextBtn{
     margin-top:0;
+}
+
+.welcome-card > h1,
+.welcome-card > #welcomeName,
+.welcome-card > #welcomeMessage,
+.welcome-card > .nextBtn{
+    position:relative;
+    top:-35px;
+}
+
+.welcome-card > h1{
+    margin-bottom:4px;
+}
+
+.welcome-card > #welcomeName{
+    margin-bottom:6px;
+}
+
+.welcome-card > #welcomeMessage{
+    margin-bottom:14px;
 }
 
 @media(max-width:480px){
@@ -1918,6 +1953,10 @@ color:white;
         margin-bottom:16px;
         font-size:14px;
         line-height:1.55;
+    }
+
+    .welcome-card > #welcomeMessage{
+        margin-bottom:12px;
     }
 }
 
