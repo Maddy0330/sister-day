@@ -910,6 +910,47 @@ margin-top:30px;
     overflow-y:auto;
 }
 
+#musicToggle{
+    position:fixed;
+    top:max(14px, env(safe-area-inset-top));
+    right:max(14px, env(safe-area-inset-right));
+    z-index:10000;
+    width:48px;
+    height:48px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:50%;
+    background:rgba(255,255,255,.22);
+    color:white;
+    font-size:22px;
+    line-height:1;
+    box-shadow:0 10px 28px rgba(180,38,102,.3), inset 0 0 14px rgba(255,255,255,.2);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+#musicToggle:hover{
+    transform:scale(1.08);
+    background:rgba(255,255,255,.32);
+    box-shadow:0 12px 32px rgba(180,38,102,.38), inset 0 0 16px rgba(255,255,255,.25);
+}
+
+#musicToggle:active{
+    transform:scale(.94);
+}
+
+@media(max-width:480px){
+    #musicToggle{
+        width:44px;
+        height:44px;
+        font-size:20px;
+    }
+}
+
 #letterText{
 
     flex:1 1 auto;
@@ -2013,14 +2054,6 @@ color:white;
     box-shadow:0 10px 25px rgba(0,0,0,.18);
 }
 
-.memory-item figcaption{
-    margin-top:10px;
-    color:rgba(255,255,255,.88);
-    font-size:14px;
-    line-height:1.4;
-    text-align:center;
-}
-
 @media(max-width:480px){
     .gallery{
         margin-top:12px;
@@ -2035,10 +2068,6 @@ color:white;
         padding-top:18px;
     }
 
-    .memory-item figcaption{
-        margin-top:8px;
-        font-size:13px;
-    }
 }
 
 /*==========================================================

@@ -143,6 +143,8 @@ function setupEventListeners() {
       }
     });
   }
+
+  setupMusicToggle();
   
   // Close popups on outside click
   document.addEventListener("click", function(e) {
@@ -150,6 +152,28 @@ function setupEventListeners() {
       closeMessagePopup();
     }
   });
+}
+
+function setupMusicToggle() {
+  const audio = document.getElementById("bgMusic");
+  const musicButton = document.getElementById("musicToggle");
+  if (!audio || !musicButton) return;
+
+  function updateMusicButton() {
+    const muted = audio.muted;
+    musicButton.textContent = muted ? "🔇" : "🔊";
+    musicButton.setAttribute("aria-label", muted ? "Unmute music" : "Mute music");
+    musicButton.title = muted ? "Unmute music" : "Mute music";
+  }
+
+  musicButton.addEventListener("click", function(e) {
+    e.stopPropagation();
+    audio.muted = !audio.muted;
+    updateMusicButton();
+  });
+
+  audio.addEventListener("volumechange", updateMusicButton);
+  updateMusicButton();
 }
 
 // ==================== PASSWORD VERIFICATION ====================
