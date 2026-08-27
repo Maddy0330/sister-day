@@ -214,13 +214,21 @@ function loadSisterContent() {
   
   // Set welcome message
   const welcomeTitle = document.getElementById("welcomeTitle");
-  const welcomeSubtitle = document.getElementById("welcomeSubtitle");
+  const welcomeName = document.getElementById("welcomeName");
+  const welcomeMessage = document.getElementById("welcomeMessage");
+  const welcomeButton = document.getElementById("welcomeButton");
   
   if (welcomeTitle) {
-    welcomeTitle.textContent = "Happy Sister's Day ❤️";
+    welcomeTitle.textContent = sister.welcomeTitle;
   }
-  if (welcomeSubtitle) {
-    welcomeSubtitle.textContent = sister.name;
+  if (welcomeName) {
+    welcomeName.textContent = sister.name + " ❤️";
+  }
+  if (welcomeMessage) {
+    welcomeMessage.textContent = sister.welcomeMessage;
+  }
+  if (welcomeButton) {
+    welcomeButton.textContent = sister.welcomeButton;
   }
   
   // Load music

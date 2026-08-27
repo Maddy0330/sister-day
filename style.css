@@ -105,14 +105,16 @@ background-position:0% 50%;
 ==========================================================*/
 
 .page{
-
-position:absolute;
-
-top:0;
+ position:absolute;
+ 
+ top:0;
 left:0;
 
-width:100%;
-height:100%;
+ width:100vw;
+ height:100vh;
+ height:100dvh;
+ min-height:100vh;
+ min-height:100dvh;
 
 display:flex;
 
@@ -138,7 +140,8 @@ filter .75s ease,
 
 visibility .75s;
 
-padding:20px;
+ padding:16px;
+ overflow:hidden;
 
 will-change:transform,opacity;
 
@@ -165,8 +168,14 @@ filter:blur(0);
 ==========================================================*/
 
 .glass-card{
-
-width:min(430px,95vw);
+ width:min(430px,95vw);
+ height:calc(100vh - 32px);
+ height:calc(100dvh - 32px);
+ max-height:calc(100vh - 32px);
+ max-height:calc(100dvh - 32px);
+ display:flex;
+ flex-direction:column;
+ overflow:hidden;
 
 padding:35px;
 
@@ -657,7 +666,9 @@ transform:scale(1.6);
 
 .intro-card{
 
-animation:
+    justify-content:center;
+
+    animation:
 
 fadeIn .8s ease,
 
@@ -837,14 +848,72 @@ margin-top:30px;
 ==========================================================*/
 
 .letter-card{
+    height:calc(100vh - 40px);
+    max-height:calc(100vh - 40px);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
 
-    max-height:82vh;
+.intro-card .small-title{
+    margin-bottom:8px;
+}
 
+.intro-card .main-title{
+    margin-bottom:12px;
+}
+
+.intro-message{
+    max-width:290px;
+    margin:0 auto 14px;
+    font-size:14px;
+    line-height:1.55;
+    text-align:center;
+}
+
+.intro-card #welcomeName{
+    margin:-4px 0 12px;
+    font-size:20px;
+    font-weight:600;
+}
+
+#welcomeMessage{
+    white-space:pre-line;
+}
+
+.intro-card input{
+    margin-top:0;
+    margin-bottom:14px;
+}
+
+.intro-card #continueBtn{
+    margin-top:0;
+}
+
+.glass-card > h1,
+.glass-card > h2,
+.glass-card > input,
+.glass-card > button{
+    flex:0 0 auto;
+}
+
+.glass-card > .nextBtn{
+    margin-top:auto;
+}
+
+#letterText,
+.gallery,
+#cardsContainer,
+#finalLetter{
+    flex:1 1 auto;
+    min-height:0;
+    overflow-y:auto;
 }
 
 #letterText{
 
-    min-height:300px;
+    flex:1 1 auto;
+    min-height:0;
 
     text-align:left;
 
@@ -860,6 +929,10 @@ margin-top:30px;
 
     padding-right:10px;
 
+}
+
+.letter-card .nextBtn{
+    flex:0 0 auto;
 }
 
 #letterText::-webkit-scrollbar{
@@ -913,6 +986,7 @@ opacity:0;
     gap:14px;
 
     margin-top:25px;
+    align-content:start;
 
 }
 
@@ -1217,6 +1291,7 @@ grid-template-columns:1fr;
 gap:18px;
 
 margin-top:25px;
+align-content:start;
 
 }
 
@@ -1326,7 +1401,8 @@ font-size:18px;
 
 white-space:pre-wrap;
 
-min-height:220px;
+min-height:0;
+overflow-y:auto;
 
 }
 
@@ -1611,6 +1687,25 @@ width:95vw;
 
 }
 
+.letter-card{
+    height:calc(100vh - 32px);
+    max-height:calc(100vh - 32px);
+}
+
+.intro-card .small-title{
+    font-size:42px;
+}
+
+.intro-message{
+    max-width:260px;
+    font-size:13px;
+}
+
+.intro-card #welcomeName{
+    margin:-2px 0 10px;
+    font-size:18px;
+}
+
 .main-title{
 
 font-size:2.4rem;
@@ -1769,6 +1864,126 @@ color:white;
 
 }
 
+
+/*==========================================================
+                    WELCOME PAGE
+==========================================================*/
+
+.welcome-card{
+    justify-content:center;
+    padding:24px 28px;
+}
+
+.welcome-card > h1{
+    margin-bottom:8px;
+    font-size:1.7rem;
+    line-height:1.25;
+    white-space:nowrap;
+}
+
+.welcome-card > #welcomeName{
+    margin:0 0 10px;
+    font-size:1.15rem;
+    line-height:1.35;
+    font-weight:600;
+}
+
+.welcome-card > #welcomeMessage{
+    margin:0 0 18px;
+    max-width:300px;
+    font-size:15px;
+    line-height:1.65;
+    text-align:center;
+}
+
+.welcome-card > .nextBtn{
+    margin-top:0;
+}
+
+@media(max-width:480px){
+    .welcome-card{
+        padding:20px 22px;
+    }
+
+    .welcome-card > h1{
+        font-size:1.55rem;
+    }
+
+    .welcome-card > #welcomeName{
+        font-size:1.05rem;
+    }
+
+    .welcome-card > #welcomeMessage{
+        max-width:260px;
+        margin-bottom:16px;
+        font-size:14px;
+        line-height:1.55;
+    }
+}
+
+/*==========================================================
+                    MEMORIES TIMELINE
+==========================================================*/
+
+.gallery{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    margin-top:16px;
+    padding-right:4px;
+    overflow-y:auto;
+    align-content:normal;
+}
+
+.memory-item{
+    margin:0;
+    padding:0 0 22px;
+}
+
+.memory-item + .memory-item{
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.28);
+}
+
+.gallery img,
+.gallery img:last-child{
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:auto;
+    object-fit:contain;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.memory-item figcaption{
+    margin-top:10px;
+    color:rgba(255,255,255,.88);
+    font-size:14px;
+    line-height:1.4;
+    text-align:center;
+}
+
+@media(max-width:480px){
+    .gallery{
+        margin-top:12px;
+        padding-right:2px;
+    }
+
+    .memory-item{
+        padding-bottom:18px;
+    }
+
+    .memory-item + .memory-item{
+        padding-top:18px;
+    }
+
+    .memory-item figcaption{
+        margin-top:8px;
+        font-size:13px;
+    }
+}
 
 /*==========================================================
                     THE END ❤️
