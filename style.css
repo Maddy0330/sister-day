@@ -1875,6 +1875,23 @@ color:white;
     padding:24px 28px;
 }
 
+#page1 .welcome-card > h1,
+#page1 .welcome-card > #welcomeName,
+#page1 .welcome-card > #welcomeMessage,
+#page1 .welcome-card > .nextBtn{
+    align-self:center;
+    left:auto;
+    right:auto;
+}
+
+#page1 .welcome-card > h1,
+#page1 .welcome-card > #welcomeName,
+#page1 .welcome-card > #welcomeMessage{
+    text-align:center !important;
+    padding-left:0;
+    padding-right:0;
+}
+
 .welcome-card > h1{
     margin-bottom:8px;
     font-size:1.7rem;
